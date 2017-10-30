@@ -15,7 +15,9 @@ public class Pathmaker : MonoBehaviour {
 	// translate the pseudocode below
 
 	int counter = 0;
-	public GameObject floorPrefab;
+	public GameObject floorPrefab1;
+	public GameObject floorPrefab2;
+	public GameObject floorPrefab3;
 	public GameObject pathmakerSpherePrefab;
 
 	float randomNum;
@@ -52,7 +54,20 @@ public class Pathmaker : MonoBehaviour {
 					Instantiate(pathmakerSpherePrefab, transform.position, transform.rotation);
 				}
 
-				Instantiate(floorPrefab, transform.position, transform.rotation);
+				int randomTile = Random.Range(1, 4);
+
+				if (randomTile == 1)
+				{
+					Instantiate(floorPrefab1, transform.position, transform.rotation);
+				}
+				else if (randomTile == 2)
+				{
+					Instantiate(floorPrefab2, transform.position, transform.rotation);
+				}
+				else if (randomTile == 3)
+				{
+					Instantiate(floorPrefab3, transform.position, transform.rotation);
+				}
 
 				transform.position += transform.forward * 5f;
 

@@ -93,11 +93,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5575b50532c45f4984a0392f98e35f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  counter: 0
-  floorPrefab: {fileID: 1680193034015120, guid: 65a6189e1bac1f549afc3dc95369929d,
-    type: 2}
+  floorPrefab:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   pathmakerSpherePrefab: {fileID: 1598955590387240}
-  randomNum: 0
 --- !u!135 &135354913655544542
 SphereCollider:
   m_ObjectHideFlags: 1
