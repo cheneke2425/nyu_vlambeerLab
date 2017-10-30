@@ -11,8 +11,16 @@ using UnityEngine;
 
 public class Pathmaker : MonoBehaviour {
 
-// STEP 2: ============================================================================================
-// translate the pseudocode below
+	// STEP 2: ============================================================================================
+	// translate the pseudocode below
+
+	int counter = 0;
+	public GameObject floorPrefab;
+	public GameObject pathmakerSpherePrefab;
+
+	float randomNum;
+
+	public static int globalTileCounter; 
 
 //	DECLARE CLASS MEMBER VARIABLES:
 //	Declare a private integer called counter that starts at 0; 		// counter var will track how many floor tiles I've instantiated
@@ -21,6 +29,52 @@ public class Pathmaker : MonoBehaviour {
 
 
 	void Update () {
+
+		if (globalTileCounter <= 1000)
+		{
+			if (counter < 50)
+			{
+				StartCoroutine(randomGenAfterSeconds());
+
+				if (randomNum < 0.25f)
+				{
+					transform.Rotate(0f, 90f, 0f);
+
+				}
+				else if (randomNum >= 0.25f && randomNum < 0.5f)
+				{
+
+					transform.Rotate(0f, -90f, 0f);
+
+				}
+				else if (randomNum >= 0.9f && randomNum < 1.0f)
+				{
+					Instantiate(pathmakerSpherePrefab, transform.position, transform.rotation);
+				}
+
+				Instantiate(floorPrefab, transform.position, transform.rotation);
+
+				transform.position += transform.forward * 5f;
+
+				counter++;
+
+				globalTileCounter++;
+
+			}
+			else {
+
+				Destroy(gameObject);
+
+			}
+		}
+		else {
+			
+			Destroy(gameObject);
+		}
+
+
+
+
 //		If counter is less than 50, then:
 //			Generate a random number from 0.0f to 1.0f;
 //			If random number is less than 0.25f, then rotate myself 90 degrees;
@@ -33,6 +87,20 @@ public class Pathmaker : MonoBehaviour {
 //			Increment counter;
 //		Else:
 //			Destroy my game object; 		// self destruct if I've made enough tiles already
+	}
+
+	IEnumerator randomGenAfterSeconds()
+	{
+		float sec = Random.Range(0.3f, 0.6f);
+		yield return new WaitForSeconds(sec);
+
+		randomGen();
+	}
+
+	void randomGen()
+	{
+		randomNum = Random.Range(0.0f, 1.0f);
+		StartCoroutine(randomGenAfterSeconds());
 	}
 
 } // end of class scope
