@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.SceneManagement;
+
 // MAZE PROC GEN LAB
 // all students: complete steps 1-6, as listed in this file
 // optional: if you have extra time, complete the "extra tasks" to do at the very bottom
@@ -86,9 +88,6 @@ public class Pathmaker : MonoBehaviour {
 			
 			Destroy(gameObject);
 		}
-
-
-
 
 //		If counter is less than 50, then:
 //			Generate a random number from 0.0f to 1.0f;

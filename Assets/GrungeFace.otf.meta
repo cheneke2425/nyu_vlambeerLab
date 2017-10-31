@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 8c10220b5b3d84350a5b68efab51f6c0
+timeCreated: 1509412497
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Grunge Face
+  fontNames:
+  - Grunge Face
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
